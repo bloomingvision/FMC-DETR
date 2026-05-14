@@ -1,0 +1,6 @@
+README.md
+setup.py
+kat_rational.egg-info/PKG-INFO
+kat_rational.egg-info/SOURCES.txt
+kat_rational.egg-info/dependency_links.txt
+kat_rational.egg-info/top_level.txt
