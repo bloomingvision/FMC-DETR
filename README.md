@@ -33,32 +33,97 @@ This repository provides the complete implementation of FMC-DETR, including:
 - FMC-DETR related modules
 - Prediction and evaluation scripts
 
-The main implementation is located in:
+## Repository Structure
 
-(1) Environment
-```text
-requirements.txt
+The main implementation of FMC-DETR is organized as follows:
 
-Install PyTorch according to your CUDA version. For CUDA 12.1, you may use:
 ```text
+FMC-DETR/
+├── ultralytics/
+│   ├── nn/
+│   │   ├── extra_modules/
+│   │   │   ├── rational_kat_cu/
+│   │   │   └── ...
+│   │   └── ...
+│   └── ...
+├── assets/
+├── configs/
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## Environment Setup
+
+### 1. Install Dependencies
+
+Install the required Python packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+Install PyTorch according to your CUDA version.
+
+For CUDA 12.1, you may use:
+
+```bash
 pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu121
+```
 
-(2) The Rational-KAT CUDA/Triton extension used by the model is located in:
+---
+
+### 2. Compile Rational-KAT CUDA/Triton Extension
+
+The Rational-KAT CUDA/Triton extension used by FMC-DETR is located in:
+
 ```text
 ultralytics/nn/extra_modules/rational_kat_cu/
+```
 
-Compile Rational-KAT Extension
-The module under ultralytics/nn/extra_modules/rational_kat_cu/ needs to be installed before training or inference.
+Before training or inference, please compile and install the extension.
 
 Enter the directory:
+
+```bash
 cd ultralytics/nn/extra_modules/rational_kat_cu
+```
 
-Run the installation script:
+Install Triton:
+
+```bash
 pip install triton==3.1.0
-pip install -e .
+```
 
+Compile and install the extension:
+
+```bash
+pip install -e .
+```
+
+---
+
+## Current Release
+
+This repository currently includes:
+
+- Training code
+- Validation code
+- Inference code
+- Model architecture
+- Configuration files
+- Prediction and evaluation scripts
+- FMC-DETR related modules
+
+---
 
 ## Notes
-The manuscript is currently under review. Citation information will be updated after the paper is accepted or publicly available.
-For questions or academic collaboration, please open an issue or contact via email.
 
+The manuscript is currently under review.
+
+Citation information will be updated after the paper is officially accepted or publicly available.
+
+For questions, discussions, or academic collaboration, please open an issue or contact via email.
+
+---
